@@ -1,5 +1,5 @@
 
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.10)
 
 project(sample_toplogy VERSION 0.11.0 LANGUAGES CXX)
 

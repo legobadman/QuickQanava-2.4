@@ -1,5 +1,5 @@
 
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.10)
 
 # Require C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -28,7 +28,7 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR} "../../src" )
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 add_executable(sample_dataflow ${source_files} dataflow.qrc)
 target_include_directories(sample_dataflow PUBLIC QuickQanava Qt${QT_VERSION_MAJOR}::QuickControls2)
-target_link_libraries(sample_dataflow QuickQanava QuickContainers Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::QuickControls2)
+target_link_libraries(sample_dataflow QuickQanava Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::QuickControls2)
 
 if(WIN32 AND DEPLOY)
     find_program(WINDEPLOYQT_EXECUTABLE NAMES windeployqt HINTS ${QTDIR} ENV QTDIR PATH_SUFFIXES bin)

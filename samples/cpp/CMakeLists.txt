@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.10)
 
 # Configure Qt
 find_package(QT NAMES Qt6 Qt5 COMPONENTS QuickControls2 REQUIRED)

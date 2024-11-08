@@ -1,5 +1,5 @@
 
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.10)
 
 # Require C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -25,7 +25,7 @@ set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS $<$<CONFIG:Debug>:QT_
 
 add_executable(sample_edges ${source_files} edges.qrc)
 target_include_directories(sample_edges PUBLIC QuickQanava Qt${QT_VERSION_MAJOR}::QuickControls2)
-target_link_libraries(sample_edges QuickQanava QuickContainers Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::QuickControls2)
+target_link_libraries(sample_edges QuickQanava Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::QuickControls2)
 
 if(WIN32 AND DEPLOY)
     find_program(WINDEPLOYQT_EXECUTABLE NAMES windeployqt HINTS ${QTDIR} ENV QTDIR PATH_SUFFIXES bin)

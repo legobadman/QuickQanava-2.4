@@ -10,7 +10,7 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick Qml Quick QuickCont
 
 message("Building QuickQanava for Qt${QT_VERSION_MAJOR}")
 
-option(QUICK_QANAVA_BUILD_SAMPLES "Build the samples" FALSE)
+option(QUICK_QANAVA_BUILD_SAMPLES "Build the samples" TRUE)
 
 if (${QT_VERSION_MAJOR} EQUAL 5)
     include(CMakeLists.qt5.txt)
@@ -19,3 +19,21 @@ else()
 endif()
 
 add_subdirectory(src)
+
+if (${QUICK_QANAVA_BUILD_SAMPLES})
+    add_subdirectory(samples/advanced)
+    add_subdirectory(samples/connector)
+    add_subdirectory(samples/cpp)
+
+    add_subdirectory(samples/dataflow)
+    add_subdirectory(samples/edges)
+    add_subdirectory(samples/navigable)
+
+    add_subdirectory(samples/groups)
+    add_subdirectory(samples/nodes)
+    #add_subdirectory(samples/layouts)
+    add_subdirectory(samples/selection)
+
+    add_subdirectory(samples/style)
+    add_subdirectory(samples/topology)
+endif()
